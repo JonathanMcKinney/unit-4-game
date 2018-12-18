@@ -48,9 +48,61 @@
             <button class="col-md-3" id="guess3"></button>
             <button class="col-md-3" id="guess4"></button>
         </div>
+        <div class="row">
+            <div id="total"></div>
+        </div>
     </div>
 
     <script>
+
+    var goal = Math.floor(Math.random() * 102 + 19); //create a random # between 19 and 120
+    $("#ranGoal").text(goal);
+
+    var guesses = [];
+    
+    for (var i = 0; i < 4; i++) {
+        guesses.push(Math.floor(Math.random() * 12 +1));
+    }
+
+    $("#guess1").text(guesses[0]);
+    $("#guess2").text(guesses[1]);
+    $("#guess3").text(guesses[2]);
+    $("#guess4").text(guesses[3]);
+
+    var sum = 0
+
+    $("#guess1").on("click", function () {
+        sum += guesses[0];
+    $("#total").text(sum);
+    });
+    $("#guess2").on("click", function () {
+        sum += guesses[1];
+    $("#total").text(sum);
+    });
+    $("#guess3").on("click", function () {
+        sum += guesses[2];
+    $("#total").text(sum);
+    });
+    $("#guess4").on("click", function () {
+        sum += guesses[3];
+    $("#total").text(sum);
+    });
+
+    var win = 0;
+    var loss = 0;
+
+    if (sum == goal) {
+        alert("You win! Keep going!!!");
+        win++;
+    }
+    
+
+    $("#winCount").text("Wins: " + win);
+    $("#lossCount").text("Losses: " + loss);
+    
+
+
+
     
     </script>
 </body>
