@@ -9,6 +9,16 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <style>
+        .guess-image {
+            width: 25%;
+            height: 30%;
+            margin-right: 10px auto;
+            margin-bottom: 10px;
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -34,76 +44,26 @@
         </div>
         <div class="row">
             <div class="goal-box col-md-6">
-                <h5>Goal: <span id="ranGoal"></span></h5>
+                <h4>Goal: <span id="ranGoal"></span></h5>
             </div>
             <div class="score-box col-md-6">
                 <h5>Score:</h5>
-                <div id="winCount"></div>
-                <div id="lossCount"></div>
+                <div>Wins: <span id="winCount">0</span> </div>
+                <div>Losses: <span id="lossCount">0</span></div>
             </div>
         </div>
-        <div class="row">
-            <button class="col-md-3" id="guess1"></button>
-            <button class="col-md-3" id="guess2"></button>
-            <button class="col-md-3" id="guess3"></button>
-            <button class="col-md-3" id="guess4"></button>
+        <div class="row guess">
+            
         </div>
         <div class="row">
-            <div id="total"></div>
+            <div class="col-md-4">
+                <h4>Your current total is:</h4>
+                <h5 id="total"></h5>
+            </div>
         </div>
     </div>
 
-    <script>
-
-    var goal = Math.floor(Math.random() * 102 + 19); //create a random # between 19 and 120
-    $("#ranGoal").text(goal);
-
-    var guesses = [];
-    
-    for (var i = 0; i < 4; i++) {
-        guesses.push(Math.floor(Math.random() * 12 +1));
-    }
-
-    $("#guess1").text(guesses[0]);
-    $("#guess2").text(guesses[1]);
-    $("#guess3").text(guesses[2]);
-    $("#guess4").text(guesses[3]);
-
-    var sum = 0
-
-    $("#guess1").on("click", function () {
-        sum += guesses[0];
-    $("#total").text(sum);
-    });
-    $("#guess2").on("click", function () {
-        sum += guesses[1];
-    $("#total").text(sum);
-    });
-    $("#guess3").on("click", function () {
-        sum += guesses[2];
-    $("#total").text(sum);
-    });
-    $("#guess4").on("click", function () {
-        sum += guesses[3];
-    $("#total").text(sum);
-    });
-
-    var win = 0;
-    var loss = 0;
-
-    if (sum == goal) {
-        alert("You win! Keep going!!!");
-        win++;
-    }
-    
-
-    $("#winCount").text("Wins: " + win);
-    $("#lossCount").text("Losses: " + loss);
-    
-
-
-
-    
+    <script src="assets/javascript/game.js">
     </script>
 </body>
 
