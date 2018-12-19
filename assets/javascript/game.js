@@ -10,14 +10,16 @@
     function reset () {
         sum = 0;
         $("#total").text(sum);
-        guesses = [];
         goal = Math.floor(Math.random() * 102 + 19);
         $("#ranGoal").text(goal);
-
+        
+        guesses = [];
         for (var i=0; i < 4; i++) {
+            var newGuess = $("img");
             guesses.push(Math.floor(Math.random() * 12 + 1));
-            guess.attr("data-guessvalue", guesses[i]);
+            newGuess.attr("data-guessvalue", guesses[i]);
         }
+        
     }
     
     for (var i = 0; i < 4; i++) {
