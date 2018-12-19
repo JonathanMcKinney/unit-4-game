@@ -11,6 +11,9 @@
         sum = 0;
         $("#total").text(sum);
         guesses = [];
+        goal = Math.floor(Math.random() * 102 + 19);
+        $("#ranGoal").text(goal);
+
         for (var i=0; i < 4; i++) {
             guesses.push(Math.floor(Math.random() * 12 + 1));
             guess.attr("data-guessvalue", guesses[i]);
