@@ -15,7 +15,7 @@
         
         guesses = [];
         for (var i=0; i < 4; i++) {
-            var newGuess = $("img");
+            newGuess = $(".ornament-"+[i+1]);
             guesses.push(Math.floor(Math.random() * 12 + 1));
             newGuess.attr("data-guessvalue", guesses[i]);
         }
@@ -26,6 +26,7 @@
         guesses.push(Math.floor(Math.random() * 12 +1));
         var guess = $("<img>");
         guess.addClass("guess-image col-md-3");
+        guess.addClass("ornament-"+[i+1]);
         guess.attr("src","assets/images/ornament.jpg");
         guess.attr("data-guessvalue", guesses[i]);
         $(".guess").append(guess);
