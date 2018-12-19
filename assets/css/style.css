@@ -1,0 +1,20 @@
+body {
+    background-image: url("../images/christmastree.jpg");
+}
+
+.container {
+    background-color: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+
+}
+
+h1, h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.counter {
+    margin-bottom: 5px;
+}
