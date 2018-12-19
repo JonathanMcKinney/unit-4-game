@@ -18,3 +18,8 @@ h1, h4 {
 .counter {
     margin-bottom: 5px;
 }
+
+.guess-image {
+    box-shadow: 10px 10px 5px grey;
+    padding: 5px;
+}

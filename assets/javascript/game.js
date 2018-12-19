@@ -6,6 +6,8 @@
     var sum = 0;
     var loss= 0;
     var win = 0;
+
+    var pic = ["assets/images/ornament1.jpg", "assets/images/ornament.jpg","assets/images/ornament2.jpg", "assets/images/ornament3.jpg"]
     
     function reset () {
         sum = 0;
@@ -27,7 +29,7 @@
         var guess = $("<img>");
         guess.addClass("guess-image col-md-3");
         guess.addClass("ornament-"+[i+1]);
-        guess.attr("src","assets/images/ornament.jpg");
+        guess.attr("src",pic[i]);
         guess.attr("data-guessvalue", guesses[i]);
         $(".guess").append(guess);
     }
